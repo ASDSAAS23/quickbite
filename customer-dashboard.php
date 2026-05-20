@@ -1,0 +1,3 @@
+<?php session_start(); include 'includes/auth.php'; include 'includes/header.php'; ?>
+<section class="page-section"><div class="container"><h1 class="section-title">Customer Dashboard</h1><p class="section-subtitle">Welcome back, <?= htmlspecialchars($_SESSION['full_name']) ?>.</p><div class="dashboard-cards"><div class="dashboard-card"><h3>Quick Action</h3><p><a href="menu.php">Browse Menu</a></p></div><div class="dashboard-card"><h3>Orders</h3><p><a href="order-history.php">View Order History</a></p></div><div class="dashboard-card"><h3>Reservation</h3><p><a href="reservation.php">Book a Table</a></p></div></div></div></section>
+<?php include 'includes/footer.php'; ?>

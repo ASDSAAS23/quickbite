@@ -1,0 +1,21 @@
+# ─── Dependencies ────────────────────────────────────────────
+/vendor/
+composer.lock
+
+# ─── IDE / Editor ────────────────────────────────────────────
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# ─── Environment ─────────────────────────────────────────────
+.env
+.env.local
+.env.*.local
+
+# ─── OS / System ─────────────────────────────────────────────
+desktop.ini
+*.log
