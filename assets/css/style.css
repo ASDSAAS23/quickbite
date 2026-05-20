@@ -220,6 +220,55 @@ section {
     }
 }
 
+/* Hamburger Button Styling */
+.hamburger-btn {
+    background: #f1f5f9;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.hamburger-btn:hover {
+    background: #e2e8f0;
+}
+
+.hamburger-btn span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: var(--dark);
+    border-radius: 2px;
+}
+
+/* Sidebar Overlay Styling */
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(15, 23, 42, 0.4);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 1050;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.sidebar-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
 /* Mobile Drawer (public pages) */
 .mobile-drawer {
     position: fixed;
@@ -1063,6 +1112,11 @@ section {
     border-radius: 22px;
     padding: 26px;
     box-shadow: var(--shadow);
+}
+
+.order-history-table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 .cart-summary {
