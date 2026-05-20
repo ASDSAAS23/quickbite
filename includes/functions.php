@@ -85,7 +85,7 @@ function get_flash(string $key): string
     return $message;
 }
 
-function cart_item_count(mysqli $conn): int
+function cart_item_count($conn): int
 {
     if (!is_logged_in()) {
         return 0;
