@@ -9,9 +9,17 @@
  * $conn->prepare / bind_param / get_result / fetch_assoc API everywhere.
  */
 
-$databaseUrl = getenv('DATABASE_URL') ?: ($_ENV['DATABASE_URL'] ?? '');
+$databaseUrl = getenv('DATABASE_URL');
+if (empty($databaseUrl)) {
+    $databaseUrl = $_SERVER['DATABASE_URL'] ?? ($_ENV['DATABASE_URL'] ?? '');
+}
 
-if ($databaseUrl !== '') {
+$isRender = getenv('RENDER') !== false || isset($_SERVER['RENDER']);
+
+if ($databaseUrl !== '' || $isRender) {
+    if ($databaseUrl === '') {
+        die("Deployment Error: DATABASE_URL environment variable is missing on Render. Please add it in the Render dashboard.");
+    }
     // ── Production: Supabase PostgreSQL via PDO ──────────────────────────
     require_once __DIR__ . '/mysqli_compat.php';
 

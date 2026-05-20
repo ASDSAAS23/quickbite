@@ -12,7 +12,11 @@ function qb_base_url(): string
     }
 
     // Production (Render): app is served from document root
-    $isProduction = (getenv('DATABASE_URL') ?: ($_ENV['DATABASE_URL'] ?? '')) !== '';
+    $dbUrl = getenv('DATABASE_URL');
+    if (empty($dbUrl)) {
+        $dbUrl = $_SERVER['DATABASE_URL'] ?? ($_ENV['DATABASE_URL'] ?? '');
+    }
+    $isProduction = $dbUrl !== '' || getenv('RENDER') !== false || isset($_SERVER['RENDER']);
     if ($isProduction) {
         $base = '';
         return $base;
