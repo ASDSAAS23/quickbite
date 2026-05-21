@@ -1447,6 +1447,57 @@ section {
     .cart-summary {
         padding: 22px 18px;
     }
+    .container {
+        width: 98%;
+        padding: 0 4px;
+    }
+
+    .featured-grid,
+    .meal-grid,
+    .card-grid,
+    .why-grid,
+    .testimonial-grid,
+    .footer-grid,
+    .info-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .cart-item-card {
+        padding: 12px;
+    }
+
+    .cart-item-image img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .btn, .btn-sm, .cart-link-btn {
+        min-width: 44px;
+        min-height: 44px;
+        font-size: 1rem;
+        padding: 12px 0;
+    }
+
+    .mobile-topbar .logo-icon {
+        width: 32px;
+        height: 32px;
+        font-size: 1rem;
+    }
+
+    .drawer-links a {
+        padding: 12px 10px;
+        font-size: 1rem;
+    }
+
+    .drawer-actions {
+        gap: 6px;
+    }
+
+    .site-footer {
+        padding-top: 24px;
+        margin-top: 20px;
+    }
 }
 
 
@@ -2252,7 +2303,7 @@ section {
     top: 30px;
 }
 
-.reservation-info-card {
+.info-banner {
     background: var(--white);
     border-radius: 20px;
     box-shadow: var(--shadow);
