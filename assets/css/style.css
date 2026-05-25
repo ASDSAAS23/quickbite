@@ -3104,6 +3104,138 @@ textarea {
    ========================= */
 @media (max-width: 992px) {
     .admin-dashboard {
+    .container {
+        width: 100%;
+        padding: 0 2vw;
+        min-width: 0;
+    }
+
+    .featured-grid,
+    .meal-grid,
+    .card-grid,
+    .why-grid,
+    .testimonial-grid,
+    .footer-grid,
+    .info-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .dashboard-cards,
+    .dashboard-grid,
+    .quick-actions-grid {
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
+    }
+
+    .admin-top-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .meal-card img {
+        height: 140px;
+    }
+
+    .meal-content {
+        padding: 12px;
+    }
+
+    .btn, .btn-sm, .cart-link-btn {
+        min-width: 44px;
+        min-height: 44px;
+        font-size: 1rem;
+        padding: 12px 0;
+    }
+
+    .mobile-topbar .logo-icon {
+        width: 32px;
+        height: 32px;
+        font-size: 1rem;
+    }
+
+    .drawer-links a {
+        padding: 12px 10px;
+        font-size: 1rem;
+    }
+
+    .drawer-actions {
+        gap: 6px;
+    }
+
+    .site-footer {
+        padding-top: 24px;
+        margin-top: 20px;
+    }
+
+    .order-history-table,
+    .compact-table {
+        min-width: 0 !important;
+        font-size: 0.95rem;
+    }
+
+    .order-card-body,
+    .order-section-row {
+        grid-template-columns: 1fr !important;
+        gap: 10px !important;
+    }
+
+    .order-card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .info-card, .why-card, .testimonial-card, .admin-panel-card, .dashboard-card {
+        padding: 14px 8px;
+    }
+
+    .page-banner-inner {
+        padding: 16px 6px;
+    }
+
+    .category-chip-row {
+        gap: 6px;
+        flex-wrap: wrap;
+    }
+
+    .category-chip {
+        padding: 8px 10px;
+        font-size: 0.95rem;
+    }
+
+    .slim-footer-inner {
+        flex-direction: column;
+        gap: 4px;
+        font-size: 0.9rem;
+    }
+
+    .cart-item-card {
+        padding: 10px 4px;
+        grid-template-columns: 1fr !important;
+        text-align: center;
+    }
+
+    .cart-item-image img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .cart-item-total,
+    .qty-selector,
+    .cart-item-check,
+    .cart-item-image {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cart-item-total {
+        align-items: center;
+    }
+
+    .empty-state-box {
+        padding: 30px 6px;
+    }
         padding: 40px 0;
     }
 
