@@ -20,10 +20,7 @@ $activeOrderStmt->bind_param("i", $userId);
 $activeOrderStmt->execute();
 $activeOrders = (int) ($activeOrderStmt->get_result()->fetch_assoc()['active_orders'] ?? 0);
 
-$reservationStmt = $conn->prepare("SELECT COUNT(*) AS total_reservations FROM reservations WHERE user_id = ?");
-$reservationStmt->bind_param("i", $userId);
-$reservationStmt->execute();
-$reservationCount = (int) ($reservationStmt->get_result()->fetch_assoc()['total_reservations'] ?? 0);
+
 
 $recentOrdersStmt = $conn->prepare("SELECT id, total_amount, order_status, created_at FROM orders WHERE user_id = ? ORDER BY created_at DESC LIMIT 5");
 $recentOrdersStmt->bind_param("i", $userId);
@@ -39,7 +36,7 @@ include 'includes/header.php';
             <div>
                 <span class="dashboard-kicker">Welcome back</span>
                 <h1 class="dashboard-title"><?php echo h($_SESSION['full_name'] ?? 'User'); ?></h1>
-                <p class="dashboard-copy">This is your personal Seges Foods dashboard. From here you can order meals, monitor your orders, manage reservations, and keep track of account activity.</p>
+                <p class="dashboard-copy">This is your personal Seges Foods dashboard. From here you can order meals, monitor your orders, and keep track of account activity.</p>
             </div>
             <div class="dashboard-hero-actions">
                 <a href="<?php echo qb_url('menu.php'); ?>" class="btn btn-primary">Order Meals</a>
@@ -56,10 +53,7 @@ include 'includes/header.php';
                 <h3>Active Orders</h3>
                 <p><?php echo $activeOrders; ?></p>
             </div>
-            <div class="dashboard-card animate-fade-up stagger-3">
-                <h3>Reservations</h3>
-                <p><?php echo $reservationCount; ?></p>
-            </div>
+
             <div class="dashboard-card animate-fade-up stagger-4">
                 <h3>Cart Items</h3>
                 <p><?php echo cart_item_count($conn); ?></p>
@@ -78,10 +72,7 @@ include 'includes/header.php';
                         <strong>Open Cart</strong>
                         <span>Review quantities, totals, and proceed to checkout.</span>
                     </a>
-                    <a href="<?php echo qb_url('reservation.php'); ?>" class="quick-action-card">
-                        <strong>Reserve Table</strong>
-                        <span>Book a table and track reservation approval.</span>
-                    </a>
+
                     <a href="<?php echo qb_url('profile.php'); ?>" class="quick-action-card">
                         <strong>My Profile</strong>
                         <span>See the account details currently stored in your session.</span>

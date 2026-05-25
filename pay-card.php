@@ -107,7 +107,7 @@ include 'includes/header.php';
                         </div>
                     </div>
 
-                    <div class="reservation-info-banner">
+                    <div class="info-banner">
                         <strong>Demo Payment</strong>
                         <p>This is a demonstration. No real card will be charged. Enter any valid-format details to proceed.</p>
                     </div>
@@ -134,7 +134,7 @@ include 'includes/header.php';
                     <span>₦<?php echo number_format((float) $order['total_amount'], 2); ?></span>
                 </div>
 
-                <div class="reservation-info-banner" style="margin-top:18px;">
+                <div class="info-banner" style="margin-top:18px;">
                     <strong>Secure Checkout</strong>
                     <p>Your payment details are processed securely for this demo transaction.</p>
                 </div>

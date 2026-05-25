@@ -69,7 +69,7 @@ include 'includes/header.php';
                     </div>
                 </div>
 
-                <div class="reservation-info-banner">
+                <div class="info-banner">
                     <strong>Important</strong>
                     <p>Please transfer the exact amount shown above. Use your Order ID <strong>#<?php echo $orderId; ?></strong> as the transfer narration/reference for faster verification.</p>
                 </div>

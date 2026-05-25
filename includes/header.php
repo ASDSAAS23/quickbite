@@ -19,11 +19,13 @@ $useSidebar = $loggedIn;
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, shrink-to-fit=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>Seges Foods - Fast. Fresh. Easy.</title>
-    <meta name="description" content="Seges Foods — modern online food ordering, reservations, and restaurant management.">
+    <meta name="description" content="Seges Foods — modern online food ordering and restaurant management.">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&display=swap">
-    <link rel="stylesheet" href="<?php echo qb_url('assets/css/style.css'); ?>">
+    <link rel="stylesheet" href="<?php echo qb_url('assets/css/style.css'); ?>">>
 </head>
 <body class="<?php echo $useSidebar ? 'has-sidebar' : 'has-topbar'; ?>">
 
@@ -74,14 +76,14 @@ $useSidebar = $loggedIn;
             <li><a href="<?php echo qb_url('admin/orders.php'); ?>" class="<?php echo ($currentPage === 'orders.php') ? 'active' : ''; ?>">Orders</a></li>
             <li><a href="<?php echo qb_url('admin/menu.php'); ?>" class="<?php echo ($currentPage === 'menu.php') ? 'active' : ''; ?>">Menu</a></li>
             <li><a href="<?php echo qb_url('admin/add-menu.php'); ?>" class="<?php echo ($currentPage === 'add-menu.php') ? 'active' : ''; ?>">Add Dish</a></li>
-            <li><a href="<?php echo qb_url('admin/reservations.php'); ?>" class="<?php echo ($currentPage === 'reservations.php') ? 'active' : ''; ?>">Reservations</a></li>
+
             <li><a href="<?php echo qb_url('admin/reports.php'); ?>" class="<?php echo ($currentPage === 'reports.php') ? 'active' : ''; ?>">Monthly Reports</a></li>
         <?php else: ?>
             <li><a href="<?php echo qb_url('dashboard.php'); ?>" class="<?php echo ($currentPage === 'dashboard.php') ? 'active' : ''; ?>">Dashboard</a></li>
             <li><a href="<?php echo qb_url('menu.php'); ?>" class="<?php echo ($currentPage === 'menu.php') ? 'active' : ''; ?>">Menu</a></li>
             <li><a href="<?php echo qb_url('order-history.php'); ?>" class="<?php echo ($currentPage === 'order-history.php') ? 'active' : ''; ?>">Orders</a></li>
             <li><a href="<?php echo qb_url('cart.php'); ?>" class="<?php echo ($currentPage === 'cart.php') ? 'active' : ''; ?>">Cart<?php if ($cartCount > 0) echo ' <span class="sidebar-count">' . $cartCount . '</span>'; ?></a></li>
-            <li><a href="<?php echo qb_url('reservation.php'); ?>" class="<?php echo ($currentPage === 'reservation.php') ? 'active' : ''; ?>">Reservation</a></li>
+
             <li><a href="<?php echo qb_url('profile.php'); ?>" class="<?php echo ($currentPage === 'profile.php') ? 'active' : ''; ?>">Profile</a></li>
         <?php endif; ?>
     </ul>
@@ -111,7 +113,7 @@ $useSidebar = $loggedIn;
                 <li><a href="<?php echo qb_url('index.php'); ?>" class="<?php echo ($currentPage === 'index.php') ? 'active' : ''; ?>">Home</a></li>
                 <li><a href="<?php echo qb_url('menu.php'); ?>" class="<?php echo ($currentPage === 'menu.php') ? 'active' : ''; ?>">Menu</a></li>
                 <li><a href="<?php echo qb_url('about.php'); ?>" class="<?php echo ($currentPage === 'about.php') ? 'active' : ''; ?>">About</a></li>
-                <li><a href="<?php echo qb_url('reservation.php'); ?>" class="<?php echo ($currentPage === 'reservation.php') ? 'active' : ''; ?>">Reservation</a></li>
+
                 <li><a href="<?php echo qb_url('contact.php'); ?>" class="<?php echo ($currentPage === 'contact.php') ? 'active' : ''; ?>">Contact</a></li>
             </ul>
         </nav>
@@ -135,7 +137,7 @@ $useSidebar = $loggedIn;
         <li><a href="<?php echo qb_url('index.php'); ?>">Home</a></li>
         <li><a href="<?php echo qb_url('menu.php'); ?>">Menu</a></li>
         <li><a href="<?php echo qb_url('about.php'); ?>">About</a></li>
-        <li><a href="<?php echo qb_url('reservation.php'); ?>">Reservation</a></li>
+
         <li><a href="<?php echo qb_url('contact.php'); ?>">Contact</a></li>
     </ul>
     <div class="drawer-actions">

@@ -66,7 +66,7 @@ include 'includes/header.php';
                 <h2>Seges Foods</h2>
             </div>
             <h1>Create Account</h1>
-            <p class="auth-subtext">Register to start ordering meals, saving reservations, and tracking your orders.</p>
+            <p class="auth-subtext">Register to start ordering meals and tracking your orders.</p>
 
             <?php if ($message !== ''): ?>
                 <div class="alert <?php echo $messageType; ?>"><?php echo h($message); ?></div>

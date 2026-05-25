@@ -369,7 +369,7 @@ include 'includes/header.php';
             <div class="promo-circle-1"></div>
             <div class="promo-circle-2"></div>
             <h2>Ready to feast? 🍽️</h2>
-            <p>Dive into our full menu, grab the hottest meals in town, or book a table for the ultimate dining experience.</p>
+            <p>Dive into our full menu and grab the hottest meals in town for delivery or pickup.</p>
             <div class="glovo-promo-actions">
                 <a href="<?php echo qb_url('menu.php'); ?>" class="btn-yellow">Browse Menu</a>
                 <a href="<?php echo qb_url('register.php'); ?>" class="btn-white">Join Now</a>

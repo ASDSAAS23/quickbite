@@ -11,8 +11,7 @@ $useSidebar = is_logged_in();
         <span class="slim-footer-sep">&middot;</span>
         <a href="<?php echo qb_url('menu.php'); ?>">Menu</a>
         <span class="slim-footer-sep">&middot;</span>
-        <a href="<?php echo qb_url('reservation.php'); ?>">Reservation</a>
-        <span class="slim-footer-sep">&middot;</span>
+
         <span>Logged in as <?php echo h($_SESSION['full_name'] ?? 'User'); ?></span>
     </div>
 </div>
@@ -23,7 +22,7 @@ $useSidebar = is_logged_in();
     <div class="container footer-grid">
         <div class="footer-box">
             <h3>Seges Foods</h3>
-            <p>Seges Foods is a full restaurant ordering and management system designed for fast ordering, real-time cart handling, reservations, and admin control.</p>
+            <p>Seges Foods is a full restaurant ordering and management system designed for fast ordering, real-time cart handling, and admin control.</p>
             <div class="footer-social">
                 <a href="#" title="Twitter">X</a>
                 <a href="#" title="Instagram">IG</a>
@@ -37,7 +36,7 @@ $useSidebar = is_logged_in();
             <ul>
                 <li><a href="<?php echo qb_url('index.php'); ?>">Home</a></li>
                 <li><a href="<?php echo qb_url('menu.php'); ?>">Menu</a></li>
-                <li><a href="<?php echo qb_url('reservation.php'); ?>">Reservation</a></li>
+
                 <li><a href="<?php echo qb_url('about.php'); ?>">About Us</a></li>
                 <li><a href="<?php echo qb_url('contact.php'); ?>">Contact</a></li>
             </ul>

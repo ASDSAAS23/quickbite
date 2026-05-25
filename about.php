@@ -4,7 +4,7 @@
     <div class="container">
         <div class="page-banner-inner animate-fade-up">
             <h1 class="section-title">About Seges Foods</h1>
-            <p class="section-subtitle" style="margin-bottom:0;">Seges Foods is an online restaurant management system built to improve food ordering, reservations, order tracking, and restaurant administration.</p>
+            <p class="section-subtitle" style="margin-bottom:0;">Seges Foods is an online restaurant management system built to improve food ordering, order tracking, and restaurant administration.</p>
         </div>
     </div>
 </section>
@@ -21,7 +21,7 @@
         </div>
         <div class="info-card animate-fade-up stagger-3">
             <h3>Target Users</h3>
-            <p>Customers who want to place food orders online and restaurant administrators who need to manage menu items, reservations, and order progress.</p>
+            <p>Customers who want to place food orders online and restaurant administrators who need to manage menu items and order progress.</p>
         </div>
     </div>
 </section>

@@ -9,7 +9,7 @@ DROP TABLE IF EXISTS payments CASCADE;
 DROP TABLE IF EXISTS order_items CASCADE;
 DROP TABLE IF EXISTS orders CASCADE;
 DROP TABLE IF EXISTS cart CASCADE;
-DROP TABLE IF EXISTS reservations CASCADE;
+
 DROP TABLE IF EXISTS menu_items CASCADE;
 DROP TABLE IF EXISTS categories CASCADE;
 DROP TABLE IF EXISTS users CASCADE;
@@ -79,21 +79,6 @@ CREATE TABLE order_items (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- ── Reservations ─────────────────────────────────────────────
-CREATE TABLE reservations (
-    id SERIAL PRIMARY KEY,
-    user_id INT REFERENCES users(id) ON DELETE SET NULL,
-    full_name VARCHAR(100) NOT NULL,
-    email VARCHAR(120) NOT NULL,
-    phone VARCHAR(20) NOT NULL,
-    reservation_date DATE NOT NULL,
-    reservation_time TIME NOT NULL,
-    guests INT NOT NULL,
-    special_request TEXT,
-    status VARCHAR(20) NOT NULL DEFAULT 'Pending'
-        CHECK (status IN ('Pending', 'Approved', 'Rejected')),
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
 
 -- ── Payments ─────────────────────────────────────────────────
 CREATE TABLE payments (

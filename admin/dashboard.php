@@ -22,20 +22,14 @@ $pendingSql = "SELECT COUNT(*) AS pending_orders FROM orders WHERE order_status 
 $pendingResult = $conn->query($pendingSql);
 $pendingOrders = (int) ($pendingResult->fetch_assoc()['pending_orders'] ?? 0);
 
-// Reservations reset (only show upcoming or current)
-$reservationSql = "SELECT COUNT(*) AS total_reservations FROM reservations WHERE reservation_date >= '$today'";
-$reservationResult = $conn->query($reservationSql);
-$totalReservations = (int) ($reservationResult->fetch_assoc()['total_reservations'] ?? 0);
+
 
 $latestOrders = $conn->query("SELECT orders.id, users.full_name, orders.total_amount, orders.order_status, orders.created_at 
                               FROM orders 
                               INNER JOIN users ON orders.user_id = users.id
                               ORDER BY orders.created_at DESC LIMIT 5");
 
-$latestReservations = $conn->query("SELECT full_name, guests, reservation_date, reservation_time, status
-                                    FROM reservations
-                                    WHERE reservation_date >= '$today'
-                                    ORDER BY created_at DESC LIMIT 5");
+
 
 include '../includes/header.php';
 ?>
@@ -43,13 +37,13 @@ include '../includes/header.php';
 <section class="admin-dashboard">
     <div class="container">
         <h1 class="section-title">Admin Dashboard</h1>
-        <p class="section-subtitle">Monitor system activity, orders, menu growth, and reservation workflow from one screen.</p>
+        <p class="section-subtitle">Monitor system activity, orders, and menu growth from one screen.</p>
 
         <div class="admin-top-actions">
             <a href="<?php echo qb_url('admin/orders.php'); ?>" class="btn btn-primary">Manage Orders</a>
             <a href="<?php echo qb_url('admin/menu.php'); ?>" class="btn btn-light">Manage Menu</a>
             <a href="<?php echo qb_url('admin/add-menu.php'); ?>" class="btn btn-light">Add New Dish</a>
-            <a href="<?php echo qb_url('admin/reservations.php'); ?>" class="btn btn-light">Manage Reservations</a>
+
         </div>
 
         <div class="dashboard-cards">
@@ -71,10 +65,7 @@ include '../includes/header.php';
                 <h3>Pending Orders</h3>
                 <p><?php echo $pendingOrders; ?></p>
             </div>
-            <div class="dashboard-card">
-                <h3>Reservations</h3>
-                <p><?php echo $totalReservations; ?></p>
-            </div>
+
         </div>
 
         <div class="dashboard-grid">
@@ -109,36 +100,7 @@ include '../includes/header.php';
                 </div>
             </div>
 
-            <div class="admin-panel-card">
-                <h3 style="font-family:'Poppins',sans-serif; margin-bottom:14px;">Recent Reservations</h3>
-                <div class="order-history-table-wrapper" style="padding:0; box-shadow:none;">
-                    <table class="order-history-table" style="min-width:0;">
-                        <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Guests</th>
-                                <th>Date</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php if ($latestReservations && $latestReservations->num_rows > 0): ?>
-                                <?php while ($reservation = $latestReservations->fetch_assoc()): ?>
-                                    <?php $statusClass = strtolower($reservation['status']); ?>
-                                    <tr>
-                                        <td><?php echo h($reservation['full_name']); ?></td>
-                                        <td><?php echo (int) $reservation['guests']; ?></td>
-                                        <td><?php echo h($reservation['reservation_date']); ?></td>
-                                        <td><span class="status-badge status-<?php echo $statusClass; ?>"><?php echo h($reservation['status']); ?></span></td>
-                                    </tr>
-                                <?php endwhile; ?>
-                            <?php else: ?>
-                                <tr><td colspan="4">No reservations yet.</td></tr>
-                            <?php endif; ?>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+
         </div>
     </div>
 </section>

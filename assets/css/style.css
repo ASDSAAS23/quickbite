@@ -2200,184 +2200,6 @@ section {
 }
 
 /* =========================
-   RESERVATION HISTORY
-   ========================= */
-.reservation-history-wrapper {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-    gap: 20px;
-}
-
-.reservation-card {
-    background: var(--white);
-    border-radius: 22px;
-    box-shadow: var(--shadow);
-    overflow: hidden;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.reservation-card:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-lg);
-}
-
-.reservation-card-header {
-    background: linear-gradient(135deg, #fff7ed, #fef3c7);
-    padding: 18px 22px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.reservation-id {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-    font-size: 1.05rem;
-    color: var(--dark);
-}
-
-.reservation-date-badge {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    font-size: 0.92rem;
-    color: var(--primary);
-    background: rgba(249, 115, 22, 0.08);
-    padding: 6px 14px;
-    border-radius: 999px;
-}
-
-.reservation-card-body {
-    padding: 20px 22px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
-}
-
-.reservation-detail {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
-
-.reservation-detail.full-width {
-    grid-column: 1 / -1;
-}
-
-.detail-label {
-    font-size: 0.82rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    color: var(--muted);
-    font-weight: 600;
-}
-
-.detail-value {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
-    color: var(--dark);
-}
-
-/* =========================
-   RESERVATION LAYOUT
-   ========================= */
-.reservation-layout {
-    display: grid;
-    grid-template-columns: 1fr 360px;
-    gap: 28px;
-    align-items: start;
-}
-
-@media (max-width: 992px) {
-    .reservation-layout {
-        grid-template-columns: 1fr;
-    }
-}
-
-.reservation-info-sidebar {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-    position: sticky;
-    top: 30px;
-}
-
-.info-banner {
-    background: var(--white);
-    border-radius: 20px;
-    box-shadow: var(--shadow);
-    padding: 24px;
-}
-
-.reservation-info-card h3 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.05rem;
-    margin-bottom: 18px;
-    color: var(--dark);
-}
-
-.res-step {
-    display: flex;
-    gap: 14px;
-    margin-bottom: 16px;
-    align-items: flex-start;
-}
-
-.res-step:last-child {
-    margin-bottom: 0;
-}
-
-.res-step-num {
-    width: 32px;
-    height: 32px;
-    min-width: 32px;
-    border-radius: 10px;
-    background: linear-gradient(135deg, #fff7ed, #fef3c7);
-    color: var(--primary);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-    font-size: 0.88rem;
-}
-
-.res-step strong {
-    display: block;
-    font-family: 'Poppins', sans-serif;
-    font-size: 0.92rem;
-    margin-bottom: 2px;
-}
-
-.res-step p {
-    font-size: 0.82rem;
-    color: var(--muted);
-    line-height: 1.4;
-}
-
-.hours-row {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 0;
-    border-bottom: 1px solid #f1f5f9;
-    font-size: 0.88rem;
-}
-
-.hours-row:last-child {
-    border-bottom: none;
-}
-
-.hours-row span {
-    color: var(--muted);
-}
-
-.hours-row strong {
-    font-family: 'Poppins', sans-serif;
-    color: var(--dark);
-}
-
-/* =========================
    FORM ROW 2-COL
    ========================= */
 .form-row-2 {
@@ -2624,3 +2446,732 @@ section {
     gap: 8px;
     align-items: center;
 }
+
+/* =========================
+   ORDER CARD LAYOUT
+   ========================= */
+.order-card {
+    background: var(--white);
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+    overflow: hidden;
+    border: 1px solid #F0F0F0;
+}
+
+.order-card-header {
+    background: linear-gradient(135deg, #fff7ed, #fef3c7);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.order-card-title h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: var(--dark);
+}
+
+.order-card-date {
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin: 0;
+}
+
+.order-card-status {
+    display: flex;
+    align-items: center;
+}
+
+.order-card-body {
+    padding: 24px 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.order-section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.order-section-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+}
+
+.order-section-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--primary);
+    margin: 0;
+}
+
+.order-info-text {
+    font-size: 0.95rem;
+    color: var(--dark);
+    margin: 0;
+    line-height: 1.4;
+}
+
+.order-info-amount {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin: 0;
+}
+
+.order-items-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background: #FAFAFA;
+    padding: 16px;
+    border-radius: 12px;
+    border-left: 3px solid var(--primary);
+}
+
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #E5E7EB;
+}
+
+.order-item:last-child {
+    border-bottom: none;
+}
+
+.order-item-name {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex: 1;
+}
+
+.order-item-name span:first-child {
+    font-weight: 600;
+    color: var(--dark);
+}
+
+.order-item-qty {
+    font-size: 0.85rem;
+    color: var(--muted);
+    background: #E5E7EB;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.order-item-price {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: var(--primary);
+    text-align: right;
+    white-space: nowrap;
+    margin-left: 12px;
+}
+
+.order-update-form {
+    display: flex;
+    gap: 12px;
+    align-items: flex-end;
+    flex-wrap: wrap;
+}
+
+.form-group {
+    flex: 1;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-control {
+    padding: 10px 14px;
+    border: 1px solid #E5E7EB;
+    border-radius: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.95rem;
+    background-color: var(--white);
+    color: var(--dark);
+    transition: border-color 0.2s ease;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
+}
+
+/* =========================
+   RESPONSIVE MEDIA QUERIES
+   ========================= */
+
+/* Tablet (768px - 992px) */
+@media (max-width: 992px) {
+    .container {
+        width: 95%;
+    }
+
+    .section-title {
+        font-size: 1.7rem;
+    }
+
+    .order-card-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .order-card-body {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .order-section-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .order-history-table {
+        min-width: 100%;
+        font-size: 0.9rem;
+    }
+
+    .order-history-table th,
+    .order-history-table td {
+        padding: 10px 8px;
+    }
+
+    .btn {
+        padding: 10px 18px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Mobile (small tablets / large phones - 576px - 768px) */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 1.4rem;
+    }
+
+    .section-subtitle {
+        font-size: 0.95rem;
+    }
+
+    .order-card-header {
+        padding: 16px;
+    }
+
+    .order-card-body {
+        padding: 16px;
+    }
+
+    .order-card-title h3 {
+        font-size: 1rem;
+    }
+
+    .order-section-row {
+        grid-template-columns: 1fr;
+    }
+
+    .order-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .order-item-price {
+        text-align: left;
+        margin-left: 0;
+        margin-top: 6px;
+    }
+
+    .order-update-form {
+        flex-direction: column;
+    }
+
+    .form-group {
+        width: 100%;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .order-history-table {
+        font-size: 0.8rem;
+    }
+
+    .order-history-table th,
+    .order-history-table td {
+        padding: 8px 6px;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .checkout-form-box,
+    .checkout-summary-box {
+        flex: none;
+    }
+
+    .cart-summary {
+        flex: none;
+        width: 100%;
+    }
+}
+
+/* Small phones (under 576px) */
+@media (max-width: 576px) {
+    .container {
+        width: 100%;
+        padding: 0 12px;
+    }
+
+    section {
+        padding: 40px 0;
+    }
+
+    .section-title {
+        font-size: 1.2rem;
+        margin-bottom: 8px;
+    }
+
+    .section-subtitle {
+        font-size: 0.85rem;
+        margin-bottom: 24px;
+    }
+
+    .order-card {
+        margin-bottom: 16px;
+        border-radius: 14px;
+    }
+
+    .order-card-header {
+        padding: 14px;
+        gap: 12px;
+    }
+
+    .order-card-title h3 {
+        font-size: 0.95rem;
+        margin-bottom: 2px;
+    }
+
+    .order-card-date {
+        font-size: 0.75rem;
+    }
+
+    .order-card-body {
+        padding: 14px;
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .order-section-title {
+        font-size: 0.8rem;
+    }
+
+    .order-info-text {
+        font-size: 0.9rem;
+    }
+
+    .order-info-amount {
+        font-size: 1.1rem;
+    }
+
+    .order-items-list {
+        padding: 12px;
+        font-size: 0.9rem;
+    }
+
+    .order-item {
+        padding: 6px 0;
+    }
+
+    .order-item-name {
+        gap: 6px;
+    }
+
+    .order-item-qty {
+        font-size: 0.75rem;
+        padding: 1px 6px;
+    }
+
+    .order-item-price {
+        font-size: 0.9rem;
+    }
+
+    .btn {
+        padding: 8px 14px;
+        font-size: 0.8rem;
+        width: 100%;
+    }
+
+    .btn-sm {
+        padding: 7px 12px;
+        font-size: 0.75rem;
+    }
+
+    .admin-top-actions {
+        margin-bottom: 16px;
+    }
+
+    .order-history-table {
+        font-size: 0.7rem;
+        min-width: 100%;
+    }
+
+    .order-history-table th,
+    .order-history-table td {
+        padding: 6px 4px;
+    }
+
+    .status-badge {
+        padding: 5px 9px;
+        font-size: 0.7rem;
+    }
+
+    .dashboard-cards {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin: 16px 0;
+    }
+
+    .dashboard-card h3 {
+        font-size: 0.9rem;
+        margin-bottom: 8px;
+    }
+
+    .dashboard-card p {
+        font-size: 1.4rem;
+    }
+
+    .form-control {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+
+    .form-row-2 {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .cart-summary-buttons,
+    .inline-actions {
+        flex-direction: column;
+    }
+
+    .cart-summary-buttons button,
+    .inline-actions button,
+    .cart-summary-buttons a {
+        width: 100%;
+    }
+}
+
+/* Extra small phones (under 370px) */
+@media (max-width: 370px) {
+    .container {
+        padding: 0 8px;
+    }
+
+    .section-title {
+        font-size: 1rem;
+    }
+
+    .section-subtitle {
+        font-size: 0.8rem;
+    }
+
+    .order-card-title h3 {
+        font-size: 0.85rem;
+    }
+
+    .order-section-title {
+        font-size: 0.75rem;
+    }
+
+    .order-info-text {
+        font-size: 0.85rem;
+    }
+
+    .btn {
+        padding: 7px 12px;
+        font-size: 0.75rem;
+    }
+
+    .status-badge {
+        font-size: 0.65rem;
+        padding: 4px 8px;
+    }
+}
+
+/* =========================
+   INPUT & TEXTAREA IMPROVEMENTS
+   ========================= */
+input, textarea, select {
+    max-width: 100%;
+    font-size: 16px;
+}
+
+textarea {
+    resize: vertical;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* =========================
+   TABLE MOBILE IMPROVEMENTS
+   ========================= */
+@media (max-width: 768px) {
+    .order-history-table-wrapper {
+        border-radius: 12px;
+        overflow: hidden;
+    }
+
+    .order-history-table {
+        font-size: 0.85rem;
+    }
+
+    .order-history-table th {
+        font-size: 0.8rem;
+    }
+}
+
+/* =========================
+   SIDEBAR RESPONSIVE
+   ========================= */
+@media (max-width: 992px) {
+    .sidebar {
+        width: 100%;
+    }
+
+    body.has-sidebar {
+        margin-left: 0;
+    }
+}
+
+/* =========================
+   HEADER & NAV MOBILE FIXES
+   ========================= */
+@media (max-width: 768px) {
+    .page-banner {
+        padding: 40px 0;
+    }
+
+    .page-banner h1 {
+        font-size: 1.3rem;
+    }
+
+    .page-banner p {
+        font-size: 0.9rem;
+    }
+
+    .header {
+        padding: 12px 0;
+    }
+}
+
+/* =========================
+   MENU & GRID IMPROVEMENTS
+   ========================= */
+@media (max-width: 992px) {
+    .meals-grid {
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .meals-grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 14px;
+    }
+}
+
+@media (max-width: 576px) {
+    .meals-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 12px;
+    }
+}
+
+/* =========================
+   CHECKOUT PAGE MOBILE
+   ========================= */
+@media (max-width: 992px) {
+    .checkout-wrapper {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .checkout-form-box,
+    .checkout-summary-box {
+        flex: none;
+        width: 100%;
+    }
+}
+
+/* =========================
+   CART PAGE MOBILE
+   ========================= */
+@media (max-width: 768px) {
+    .cart-wrapper {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .cart-items-section {
+        order: 1;
+    }
+
+    .cart-summary {
+        order: 2;
+        flex: none;
+        width: 100%;
+    }
+}
+
+/* =========================
+   FORM IMPROVEMENTS FOR MOBILE
+   ========================= */
+@media (max-width: 576px) {
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="number"],
+    input[type="tel"],
+    input[type="date"],
+    select,
+    textarea {
+        padding: 12px;
+        font-size: 16px;
+        border-radius: 10px;
+    }
+
+    .form-row-2,
+    .form-row-3 {
+        grid-template-columns: 1fr;
+    }
+
+    label {
+        font-size: 0.95rem;
+        margin-bottom: 6px;
+    }
+}
+
+/* =========================
+   HERO SECTION MOBILE
+   ========================= */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 40px 0;
+    }
+
+    .hero-content h1 {
+        font-size: 1.6rem;
+    }
+
+    .hero-content p {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-section {
+        padding: 30px 0;
+    }
+
+    .hero-content h1 {
+        font-size: 1.3rem;
+    }
+
+    .hero-content p {
+        font-size: 0.85rem;
+    }
+}
+
+/* =========================
+   ADMIN PANEL RESPONSIVE
+   ========================= */
+@media (max-width: 992px) {
+    .admin-dashboard {
+        padding: 40px 0;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================
+   IMAGE OPTIMIZATION FOR MOBILE
+   ========================= */
+img {
+    height: auto;
+}
+
+@media (max-width: 576px) {
+    .meal-image {
+        height: auto;
+        aspect-ratio: 4/3;
+    }
+
+    .admin-table-image {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/* =========================
+   SPACING ADJUSTMENTS FOR SMALL SCREENS
+   ========================= */
+@media (max-width: 576px) {
+    section {
+        padding: 30px 0;
+    }
+
+    .container {
+        padding: 0 12px;
+    }
+
+    .btn-group {
+        flex-direction: column;
+    }
+
+    .btn-group > * {
+        width: 100%;
+    }
+}
+
+/* =========================
+   ACCESSIBILITY IMPROVEMENTS
+   ========================= */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+@media (hover: none) and (pointer: coarse) {
+    /* Mobile: Remove hover states on touch devices */
+    .btn:hover,
+    .card:hover {
+        transform: none;
+    }
+
+    .btn:active {
+        opacity: 0.85;
+    }
+}
+
+
