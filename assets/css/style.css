@@ -1410,6 +1410,159 @@ section {
         grid-template-columns: 1fr;
     }
 
+    /* --- Chowdeck-style Mobile UI --- */
+    body {
+        background: #f8f8f8;
+    }
+
+    /* Bottom Navigation Bar */
+    .bottom-nav {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 62px;
+        background: #fff;
+        border-top: 1px solid #eee;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        z-index: 2000;
+        box-shadow: 0 -2px 16px rgba(0,0,0,0.04);
+    }
+    .bottom-nav a {
+        flex: 1;
+        text-align: center;
+        color: #222;
+        font-size: 1.2rem;
+        text-decoration: none;
+        padding: 0 2px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 500;
+        transition: color 0.2s;
+    }
+    .bottom-nav a.active,
+    .bottom-nav a:active {
+        color: #F97316;
+    }
+    .bottom-nav .nav-icon {
+        font-size: 1.5rem;
+        margin-bottom: 2px;
+    }
+
+    /* Floating Action Button */
+    .fab {
+        position: fixed;
+        bottom: 80px;
+        right: 18px;
+        width: 56px;
+        height: 56px;
+        background: linear-gradient(135deg, #F97316, #FFB300);
+        color: #fff;
+        border-radius: 50%;
+        box-shadow: 0 4px 16px rgba(249,115,22,0.18);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        z-index: 2100;
+        border: none;
+        cursor: pointer;
+        transition: background 0.2s;
+    }
+    .fab:active {
+        background: #F97316;
+    }
+
+    /* Card Redesign */
+    .meal-card, .info-card, .why-card, .testimonial-card, .dashboard-card, .admin-panel-card {
+        border-radius: 18px;
+        box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+        background: #fff;
+        margin-bottom: 12px;
+        padding: 12px 8px;
+    }
+    .meal-card img {
+        border-radius: 14px;
+        height: 120px;
+        object-fit: cover;
+    }
+    .meal-content h3 {
+        font-size: 1.1rem;
+        margin-bottom: 4px;
+    }
+    .meal-meta {
+        font-size: 0.85rem;
+        color: #F97316;
+        font-weight: 600;
+    }
+    .meal-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+    .meal-price {
+        font-size: 1.1rem;
+        color: #F97316;
+        font-weight: 700;
+    }
+    .meal-actions {
+        width: 100%;
+        gap: 8px;
+    }
+    .btn, .btn-sm, .cart-link-btn {
+        border-radius: 12px;
+        font-size: 1rem;
+        padding: 12px 0;
+        width: 100%;
+        margin-bottom: 4px;
+    }
+
+    /* Hide desktop navs on mobile */
+    .topbar-header, .app-sidebar, .slim-footer {
+        display: none !important;
+    }
+
+    /* Hide scroll-to-top on mobile */
+    .scroll-to-top {
+        display: none !important;
+    }
+
+    /* Adjust page padding for bottom nav */
+    main.app-main, .container, body, html {
+        padding-bottom: 80px !important;
+    }
+
+    /* Hide mobile drawer if using bottom nav */
+    .mobile-drawer, .sidebar-overlay {
+        display: none !important;
+    }
+
+    /* Banner and section tweaks */
+    .page-banner-inner {
+        border-radius: 14px;
+        padding: 12px 4px;
+    }
+    .section-title {
+        font-size: 1.2rem;
+    }
+    .section-subtitle {
+        font-size: 0.95rem;
+    }
+    .category-chip-row {
+        gap: 4px;
+        flex-wrap: wrap;
+    }
+    .category-chip {
+        padding: 7px 10px;
+        font-size: 0.95rem;
+        border-radius: 999px;
+    }
+    /* End Chowdeck-style Mobile UI */
     .cart-item-card {
         grid-template-columns: 1fr;
         text-align: center;

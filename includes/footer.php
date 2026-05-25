@@ -61,3 +61,37 @@ $useSidebar = is_logged_in();
 <script src="<?php echo qb_url('assets/js/main.js'); ?>"></script>
 </body>
 </html>
+<?php
+// Chowdeck-style bottom nav for mobile only
+?>
+<div class="bottom-nav" id="bottomNav" style="display:none">
+    <a href="<?php echo qb_url('index.php'); ?>" class="<?php if ($currentPage === 'index.php') echo 'active'; ?>">
+        <span class="nav-icon">🏠</span>
+        <span>Home</span>
+    </a>
+    <a href="<?php echo qb_url('menu.php'); ?>" class="<?php if ($currentPage === 'menu.php') echo 'active'; ?>">
+        <span class="nav-icon">🍔</span>
+        <span>Menu</span>
+    </a>
+    <a href="<?php echo qb_url('cart.php'); ?>" class="<?php if ($currentPage === 'cart.php') echo 'active'; ?>">
+        <span class="nav-icon">🛒</span>
+        <span>Cart</span>
+    </a>
+    <a href="<?php echo qb_url('order-history.php'); ?>" class="<?php if ($currentPage === 'order-history.php') echo 'active'; ?>">
+        <span class="nav-icon">📦</span>
+        <span>Orders</span>
+    </a>
+    <a href="<?php echo qb_url('profile.php'); ?>" class="<?php if ($currentPage === 'profile.php') echo 'active'; ?>">
+        <span class="nav-icon">👤</span>
+        <span>Me</span>
+    </a>
+</div>
+<script>
+// Show bottom nav only on mobile
+if(window.innerWidth <= 576){
+  document.getElementById('bottomNav').style.display = 'flex';
+}
+window.addEventListener('resize',function(){
+  document.getElementById('bottomNav').style.display = (window.innerWidth <= 576) ? 'flex' : 'none';
+});
+</script>
